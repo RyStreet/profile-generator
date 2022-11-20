@@ -22,7 +22,7 @@ describe("employee",()=>{
     describe('getId()',()=>{
         it("should take an employee's ID number",()=>{
             const employee = new Employee ("Ryan", 25, 'ryanstreet122@gmail.com');
-            expect(employee.getID()).toEqual(25)
+            expect(employee.getId()).toEqual(25)
         })
     });
 
