@@ -8,7 +8,7 @@ const Engineer = require('./lib/engineer')
 //import required node modules
 const fs = require('fs')
 const inquirer = require('inquirer')
-const generateMarkdown = require('./src/generateMarkdown')
+const generateMarkdown = require('./src/generateMarkdown.js')
 const { getSystemErrorName } = require('util')
 const { default: Choices } = require('inquirer/lib/objects/choices')
 
@@ -43,7 +43,6 @@ const addManager = ()=>{
         const { name, id, email, officeNumber } = managerInput
         //creates manager profile
         const manager = new Manager (name, id, email, officeNumber )
-        console.log(manager)
         //pushes profile to array
         teamArray.push(manager)
 })}
@@ -95,7 +94,7 @@ const addEmployee = ()=> {
     },
 ])
 .then(employeeData => {
-console.log(employeeData)
+
     //creates employee object
     let {role, name, id, email, school, github, addAnotherEmployee } = employeeData
     let employee;
@@ -119,6 +118,7 @@ console.log(employeeData)
     }
 })};
 
+let finalString = '';
 
 //initializes function to create manager profile
 addManager()
@@ -127,7 +127,7 @@ addManager()
     //once employees are added, data is pushed to team array
     .then((teamArray) =>{
     console.log(teamArray)
-    const mark = generateMarkdown(teamArray)
+        const mark = generateMarkdown(teamArray)
         fs.writeFile("./dist/index.html", mark, err =>{
             if(err){
                 console.log('Error', err)
@@ -136,8 +136,6 @@ addManager()
                 console.log('Generating HTML')
             }
         })
-        .catch((err)=>{
-            console.log(err)
-        })
+    
     
     });
