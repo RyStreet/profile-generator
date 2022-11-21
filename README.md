@@ -13,6 +13,8 @@ ___
 ___
   ## Description 
   This project utilizes inquirer, fs, and js to create employee profiles. Users are prompted to enter inforation about their team through the command line. After they enter their information an HTML page is generated that displays all employees.
+  
+  DEMO VIDEO - https://github.com/RyStreet/profile-generator/blob/main/Team%20profile%20Generator%20DEMO.webm
 ___
   ## Installation 
   Clone the git repository and run `node index` in the integrated terminal of index.js.
