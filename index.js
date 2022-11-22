@@ -118,7 +118,7 @@ const addEmployee = ()=> {
     }
 })};
 
-let finalString = '';
+
 
 //initializes function to create manager profile
 addManager()
